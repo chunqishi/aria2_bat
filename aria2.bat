@@ -4,6 +4,7 @@ set http_proxy=http://165.225.96.34:10015
 set https_proxy=http://165.225.96.34:10015
 
 set BAT_HOME=%~dp0
+set ARIA2C_EXE=%BAT_HOME%\aria2c.exe
 set PASTE_EXE=%BAT_HOME%\paste.exe
 set DOWNLOAD_HOME=%HOMEPATH%\Downloads
 set SHORT_CUT=%USERPROFILE%\Desktop\Aria2.lnk
@@ -15,7 +16,7 @@ REM　http://ss64.com/nt/for_cmd.html
 
 for /f "tokens=*" %%a in ('%PASTE_EXE%') do (
 	echo Downloading %%a ...
-	aria2c -s 20 -x 16 "%%a"
+	%ARIA2C_EXE% -s 20 -x 16 "%%a"
 )
 
 
